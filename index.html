@@ -1,0 +1,800 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Ce Zhang (ETH)
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="assets/css/toolkit.css" rel="stylesheet">
+    
+    <link href="assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+
+  </head>
+
+
+<!-- <body class="with-top-navbar"> -->
+  
+<body class="without-top-navbar">
+
+
+
+<div class="growl" id="app-growl"></div>
+
+<!--
+<nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/img/brand-white.png" alt="brand">
+      </a>
+    </div>
+
+    <div class="navbar-collapse collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav hidden-xs">
+          <li class="active">
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="profile/index.html">Profile</a>
+          </li>
+          <li>
+            <a data-toggle="modal" href="#msgModal">Messages</a>
+          </li>
+          <li>
+            <a href="docs/index.html">Docs</a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</nav>
+-->
+
+<!-- BIO !-->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Bio</h4>
+      </div>
+
+      <div class="modal-body p-a-1">
+        <div class="media-body">
+        Ce is an Assistant Professor in Computer Science at ETH Zürich. He believes that by making data—along with the processing of data—easily accessible to non-CS users, we have the potential to make the world a better place. His current research focuses on building data systems to support machine learning and help facilitate other sciences. Before joining ETH, Ce was advised by Christopher Ré. He finished his PhD round-tripping between the University of Wisconsin-Madison and Stanford University, and spent another year as a postdoctoral researcher at Stanford. His PhD work produced DeepDive, a trained data system for automatic knowledge-base construction. He led the research efforts that won the SIGMOD Best Paper Award (2014) and SIGMOD Research Highlight Award (2015), and was featured in special issues including 
+        "Best of VLDB" (2015), and the Nature magazine (2015).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="studentModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Students</h4>
+      </div>
+
+      <div class="modal-body p-a-1">
+        <div class="media-body">
+
+          <h5>PhD, Master's, &amp; Undergraduates</h5>
+          I am looking for students at all levels who are excited about system research related to data management and machine learning. Send me an email if you are interested.
+          <ul>
+          </ul>
+
+          <h5>Other Students</h5>
+          I also work closely with the following students.
+          <ul>
+          <li>Xupeng Li (PhD Student @ Peking University, Main Advisor: <a href="http://net.pku.edu.cn/~cuibin/index.html">Bin Cui</a>)</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="publicationModal" tabindex="-1" role="dialog" aria-labelledby="publicationModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Publication</h4>
+      </div>
+      <div class="modal-body p-a-1">
+        <div class="modal-body-scroller">
+
+
+          <ul class="media-list media-list-users list-group">
+
+
+
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD Record 2016 <br/> <font color="red">(SIGMOD Research <br/> Highlight Award)</font>
+                  </button>
+                  <strong>DeepDive: Declarative Knowledge Base Construction</strong>
+                  <p>Christopher De Sa, Alex Ratner, Christopher Ré, Jaeho Shin, Feiran Wang, Sen Wu, and Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD 2016 <br/> Industrial Track
+                  </button>
+                  <strong>Extracting Databases from Dark Data with DeepDive</strong>
+                  <p>Ce Zhang, Michael Cafarella, Feng Niu, Christopher Ré, and Jaeho Shin</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> TODS 2016 
+                  </button>
+                  <strong>Materialization Optimizations for Feature Selection</strong>
+                  <p>Ce Zhang, Arun Kumar, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> Dissertation 2015
+                  </button>
+                  <strong>DeepDive: A Data Management System for Automatic Knowledge Base Construction</strong>
+                  <p>Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> ArXiv 2015
+                  </button>
+                  <strong>Building a Large-scale Multimodal Knowledge Base System for Answering Visual Queries</strong>
+                  <p>Yuke Zhu, Ce Zhang, Christopher Ré, and Li Fei-Fei</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> NIPS 2015 <br/> <font color="red">(Research Highlight)</font>
+                  </button>
+                  <strong>Rapidly Mixing Gibbs Sampling for a Class of Factor Graphs Using Hierarchy Width</strong>
+                  <p>Christopher De Sa, Ce Zhang, Kunle Olukotun, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> NIPS 2015
+                  </button>
+                  <strong>Taming the Wild: A Unified Analysis of Hogwild!-Style Algorithms</strong>
+                  <p>Christopher De Sa, Ce Zhang, Kunle Olukotun, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> Bioinformatics 2015
+                  </button>
+                  <strong>Large-scale Extraction of Gene Interactions from Full Text Literature Using DeepDive</strong>
+                  <p>Emily Mallory, Ce Zhang, Christopher Ré, and Russ Altman</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> DanaC 2015
+                  </button>
+                  <strong>Caffe con Troll: Shallow Ideas to Speed Up Deep Learning</strong>
+                  <p>Stefan Hadjis, Firas Abuzaid, Ce Zhang, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> VLDB 2015 <br/> <font color="red">(Best of VLDB)</font>
+                  </button>
+                  <strong>Incremental Knowledge Base Construction Using DeepDive</strong>
+                  <p>Jaeho Shin, Sen Wu, Feiran Wang, Ce Zhang, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> TAC 2015
+                  </button>
+                  <strong>Stanford's Distantly Supervised Slot Filling Systems for KBP 2014</strong>
+                  <p>Gabor Angeli, Sonal Gupta, Melvin Johnson Premkumar, Chris Manning, 
+    Chris Re, Julie Tibshirani, Jean Y. Wu, Sen Wu, and Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> PLoS ONE 2014
+                  </button>
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> Nature News
+                  </button>
+                  <strong>A Machine Reading System for Assembling Synthetic Paleontological Databases</strong>
+                  <p>Shanan E. Peters, Ce Zhang, Miron Livny, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> IEEE Data Eng. Bull. 2014
+                  </button>
+                  <strong>Feature Engineering for Knowledge Base Construction</strong>
+                  <p>Christopher Ré, Amir Abbas Sadeghian, Zifei Shan, Jaeho Shin, Feiran Wang, Sen Wu, Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> NIPS 2014
+                  </button>
+                  <strong>Parallel Feature Selection Inspired by Group Testing</strong>
+                  <p>Yingbo Zhou, Utkarsh Porwal, Ce Zhang, Hung Q. Ngo, Long Nguyen, Christopher Ré, and Venu Govindaraju</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> IMDM 2014
+                  </button>
+                  <strong>Tradeoffs in Main-Memory Statistical Analytics: Impala to DimmWitted (Invited) 
+</strong>
+                  <p>Victor Bittorf, Marcel Kornacker, Christopher Ré, and Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> VLDB 2014
+                  </button>
+                  <strong>DimmWitted: A Study of Main-Memory Statistical Analytics</strong>
+                  <p>Ce Zhang, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD 2014 <br/> <font color="red">(Best Paper Award)</font>
+                  </button>
+                  <strong>Materialization Optimizations for Feature Selection</strong>
+                  <p>Ce Zhang, Arun Kumar, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+
+
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> ICMI 2013
+                  </button>
+                  <strong>A Markov Logic Framework for Recognizing Complex Events from Multimodal Data </strong>
+                  <p>Young Chol Song, Henry Kautz, James Allen, Mary Swift, Yuncheng Li, Jiebo Luo, and Ce Zhang 
+</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> NIPS 2013
+                  </button>
+                  <strong>An Approximate, Efficient LP Solver for LP Rounding</strong>
+                  <p>Srikrishna Sridhar, Victor Bittorf, Ji Liu, Ce Zhang, Christopher Ré, and Stephen J. Wright</p>
+                </div>
+              </div>
+            </li>
+            
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> TREC 2013
+                  </button>
+                  <strong>Building an Entity-Centric Stream Filtering Test Collection for TREC 2012 </strong>
+                  <p>John R. Frank, Max Kleiman-Weiner, Daniel A. Roberts, Feng Niu, Ce Zhang, Christopher Ré, Ian Soboroff</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> ACL 2013 <br/> (Short Paper)
+                  </button>
+                  <strong>Understanding Tables in Context using Standard NLP Toolkits</strong>
+                  <p>Vidhya Govindaraju, Ce Zhang and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+            
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD 2013 
+                  </button>
+                  <strong>Towards High-Throughput Gibbs Sampling at Scale: A Study across Storage Managers</strong>
+                  <p>Ce Zhang, and Christopher Ré</p>
+                </div>
+              </div>
+            </li>
+            
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD 2013 <br/> (Demo Paper)
+                  </button>
+                  <strong>GeoDeepDive: Statistical Inference using Familiar Data-Processing Languages</strong>
+                  <p>Ce Zhang, Vidhya Govindaraju, Jackson Borchardt, Tim Foltz, Christopher Ré, and Shanan Peters</p>
+                </div>
+              </div>
+            </li>
+            
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> CIDR 2013 <br/> (Vision Paper)
+                  </button>
+                  <strong>Brainwash: A Data System for Feature Engineering</strong>
+                  <p>Michael Anderson, Dolan Antenucci, Victor Bittorf, Matthew Burgess, Michael Cafarella, 
+        Arun Kumar, Feng Niu, Yongjoo Park, Christopher Ré, and Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+            
+
+
+
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> ICDM 2013 <br/> (Short Paper)
+                  </button>
+                  <strong>Scaling Inference for Markov Logic via Dual Decomposition</strong>
+                  <p>Feng Niu, Ce Zhang, Christopher Ré, and Jude Shavlik</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> ACL 2012
+                  </button>
+                  <strong>Big Data versus the Crowd: Looking for Relationships in All the Right Places</strong>
+                  <p>Ce Zhang, Feng Niu, Christopher Ré, and Jude Shavlik</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> IJSWIS 2012
+                  </button>
+                  <strong>Elementary: Large-scale Knowledge-base Construction via Machine Learning and Statistical Inference</strong>
+                  <p>Feng Niu, Ce Zhang, Christopher Ré, and Jude Shavlik</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> VLDS 2012
+                  </button>
+                  <strong>DeepDive: Web-scale Knowledge-base Construction using Statistical Learning and Inference</strong>
+                  <p>Feng Niu, Ce Zhang, Christopher Ré, and Jude Shavlik</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> DASFAA 2011
+                  </button>
+                  <strong>Modeling User Expertise in Folksonomies by Fusing Multi-type Features</strong>
+                  <p>Junjie Yao, Bin Cui, Qiaosha Han, Ce Zhang, Yanhong Zhou</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGIR 2010
+                  </button>
+                  <strong>Content-enriched classifier for web video classification</strong>
+                  <p>Bin Cui, Ce Zhang, Gao Cong</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> SIGMOD 2010
+                  </button>
+                  <strong>Multiple feature fusion for social media applications</strong>
+                  <p>Bin Cui, Anthony K. H. Tung, Ce Zhang, Zhe Zhao</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> CIKM 2009
+                  </button>
+                  <strong>The use of categorization information in language models for question retrieval</strong>
+                  <p>Xin Cao, Gao Cong, Bin Cui, Christian S. Jensen, Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> DASFAA 2009
+                  </button>
+                  <strong>A Revisit of Query Expansion with Different Semantic Levels</strong>
+                  <p>Ce Zhang, Bin Cui, Gao Cong, Yu-Jing Wang</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> DASFAA 2009 <br/> (Demo Paper)
+                  </button>
+                  <strong>Video Annotation System Based on Categorizing and Keyword Labelling</strong>
+                  <p>Bin Cui, Bei Pan, Heng Tao Shen, Ying Wang, Ce Zhang</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item" style="border-bottom-width: 5px;">
+              <div class="media">
+                <div class="media-body">
+                  <button class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-user"></span> WWW 2008 <br/> (Poster Paper)
+                  </button>
+                  <strong>Semantic similarity based on compact concept ontology</strong>
+                  <p>Ce Zhang, Yu-Jing Wang, Bin Cui, Gao Cong</p>
+                </div>
+              </div>
+            </li>
+
+
+     
+
+
+          </ul>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container p-t-md">
+  <div class="row">
+
+    <!-- LEFT COLUMN !-->
+
+   
+    <div class="col-md-3">
+
+        <div class="panel panel-default panel-profile m-b-md">
+          <!--<div class="panel-heading" style="background-image: url(assets/img/iceland.jpg);"></div>-->
+          <div class="panel-heading" style="background-image: url(images/Zurich.jpg);"></div>
+          <!--<div class="panel-heading" style="background-image: url(images/il_570xN.619985319_ejki.jpg);"></div>-->
+
+
+          <div class="panel-body text-center">
+              <img
+                class="panel-profile-img"
+                src="images/ce2015.png"/>
+
+            <h5 class="panel-title">
+              <span style="font-size: 20px;">Ce Zhang</span>
+            </h5>
+
+            <p class="m-b-md">
+              Assistant Professor<br/>
+              
+              <a style="color: #1e3948;" href="http://www.systems.ethz.ch/">
+              System Group 
+                  
+              </a><br/>
+              
+              <a style="color: #1e3948;" href="http://www.inf.ethz.ch/">
+              Computer Science 
+
+              </a><br/>
+              
+              <a style="color: #1e3948;" href="https://www.ethz.ch/en.html">
+              ETH Zurich <!--<sup><span class="text-muted icon icon-link m-r"></sup>-->
+
+              </a> <br/>
+            </p>
+
+
+            <ul class="panel-menu">
+              <li class="panel-menu-item">
+                <a href="#userModal" class="text-inherit" data-toggle="modal">
+                  Biography
+                </a> <br/>
+                <a href="#studentModal" class="text-inherit" data-toggle="modal">
+                  Students
+                </a> <br/>
+                <a href="#publicationModal" class="text-inherit" data-toggle="modal">
+                  All Publications
+                </a>
+              </li>
+            </ul>
+
+
+          </div>
+        </div>
+
+        <div class="alert alert-warning" role="alert">
+          <b>Students:</b>
+          I am looking for students at all levels
+          who are excited about system research related to data management and machine
+          learning. Send me an email if you think that data 
+          is awesome, building systems is fun, Switzerland is
+          beautiful, and calling Einstein and von Neumann your fellow 
+          alumni would be cool!
+          
+          <!--
+          <p>
+          <div data-grid="images" data-target-width="50">
+            <img class="media-object" data-width="50" data-height="35" data-action="zoom" src="images/Zurich.jpg">
+          </div>
+          </p>
+          -->
+        </div>
+    </div>
+
+    <div class="col-md-6">
+      <ul class="list-group media-list media-list-stream">
+
+
+        <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img class="media-object img-circle" src="images/eth.jpeg">
+          </a>
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">June 2016</small>
+                <h5>ETH Zurich</h5>
+              </div>
+              <p>
+                I am joining ETH Zurich as a 
+                tenure-track assistant professor in computer science.
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="media list-group-item p-a">
+          <!--
+          <a class="media-left" href="#">
+            <img class="media-object img-circle" src="images/stanford-university.gif">
+            <img class="media-object img-circle" src="images/madison.png">
+          </a>
+          -->
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">2010-2016</small>
+                <h5>Stanford University &amp; UW-Madison</h5>
+              </div>
+              <p>
+                I spent six years working with Christopher Ré at Stanford University and
+                the University of Wisconsin-Madison. For a summary of my work, see my <a href="pdfs/ResearchStatement2010-2016.pdf">research statement</a>
+                and <a href="pdfs/zhang.thesis.pdf">PhD dissertation</a>.
+              </p>
+
+              <p>
+                With indispensable help from many collaborators, my PhD thesis produced <a href="http://deepdive.stanford.edu/">DeepDive</a>, a trained system for automatic knowledge base construction. DeepDive has been used
+                to achieve human-level quality in a range of applications, such as paleontology, anti-human trafficking, and genomics etc. DeepDive is
+                being commercialized as <a href="https://lattice.io/">Lattice</a>.
+              </p>
+
+              <p>
+                <i>I would like to thank my advisor, Chris. I owe Chris my career as a researcher. Since the day I first met
+                Chris and told him about my dream, he has done everything he could, as a scientist, an educator, and a friend to help me.</i>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="media list-group-item p-a">
+          <!--
+          <a class="media-left" href="#">
+            <img class="media-object img-circle" src="images/peking-university.jpg">
+          </a>
+          -->
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">2006-2010</small>
+                <h5>Peking University</h5>
+              </div>
+              <p>
+                I spent four years working with Bin Cui at Peking University 
+                as an undergraduate student. My research focused on managing
+                user-generated content on social media. For a summary my work, see my <a href="#">B.Sc. dissertation 
+                (in Chinese)</a> or the <a href="http://dl.acm.org/citation.cfm?id=1835553">SIGIR 2010</a> and <a href="http://dl.acm.org/citation.cfm?id=1807216">
+                SIGMOD 2010</a> paper. 
+              </p>
+
+              <p>
+                <i>I would like to thank my advisor, Bin. The training I received
+                from his group helped me realize that doing research is exciting
+                and fun and that data management is awesome.
+                </i>
+              </p>
+
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+    <div class="col-md-3">
+
+      <div class="panel panel-default ">
+        <div class="panel-body">
+          <h5 class="m-t-0">About</h5>
+          <ul class="list-unstyled list-spaced">
+            <li><span class="text-muted icon icon-mail m-r"></span>czhang @ cs.stanford</li>
+            <li><span class="text-muted icon icon-location-pin m-r"></span>Somewhere @ ETH</li>
+            <li><span class="text-muted icon icon-phone m-r"></span>+1 650-815-1477</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel panel-default ">
+        <div class="panel-body">
+          <h5 class="m-t-0">Upcoming Travels</h5>
+          <ul class="list-unstyled list-spaced">
+            <!--<li><span class="text-muted icon icon-location-pin m-r"></span>IBM Watson, June XXX</a>-->
+            <li><span class="text-muted icon icon-location-pin m-r"></span>SIGMOD, June 22-29</a>
+            <li><span class="text-muted icon icon-location-pin m-r"></span>VLDB, Sep 5-9</a>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default panel-link-list">
+        <div class="panel-body">
+          <center>
+          © 2015 Ce Zhang
+          </center> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+  </body>
+</html>
+
