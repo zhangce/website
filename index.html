@@ -32,6 +32,33 @@
       }
     </style>
 
+<script>
+/**
+* Function that tracks a click on an outbound link in Google Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+                           
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69813423-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
   </head>
 
 
@@ -663,6 +690,35 @@
 
     <div class="col-md-6">
       <ul class="list-group media-list media-list-stream">
+
+        <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img class="media-object img-circle" src="images/NVIDIA.jpg">
+            <img class="media-object img-circle" src="images/TX1.jpg">
+          </a>
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">August 3rd 2016</small>
+                <h5>Device Donation from NVIDIA</h5>
+              </div>
+              <p>
+
+                Thank you to NVIDIA for the generous donation of one Jetson TX1 and one Titan X to support my group. These devices will enable the study of the following question: <i>How fast can we make a subset of machine-learning algorithms, using just your everyday laptops with energy-efficient, credit-card-sized coprocessors?</i>
+
+              </p>
+
+
+              <p>
+                <b><i>Big Data in Small Pockets?</i></b>--see this very preliminary <a href="https://www.hashdoc.com/documents/323937/one-pager-vision-big-data-in-small-pockets" target="_blank">one-pager</a> for our vision! At the end, we hope to support GPUs, FPGAs, or even specially designed hardware. But first, we plan to understand the system trade-offs better with GPUs.
+              </p>
+              <p>
+                 <b><i>Students</i></b>--if you are excited by this project, send me an email and let's chat!
+              </p>
+            </div>
+          </div>
+        </li>
+
 
         <li class="media list-group-item p-a">
           <a class="media-left" href="#">
